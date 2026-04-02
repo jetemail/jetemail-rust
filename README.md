@@ -4,7 +4,11 @@ The official Rust SDK for the [JetEmail](https://jetemail.com) email API.
 
 ## Installation
 
-Add to your `Cargo.toml`:
+```bash
+cargo add jetemail
+```
+
+Or add it manually to your `Cargo.toml`:
 
 ```toml
 [dependencies]
