@@ -1,0 +1,26 @@
+[package]
+name = "jetemail"
+version = "0.1.0"
+edition = "2021"
+description = "Rust SDK for the JetEmail API"
+license = "MIT"
+repository = "https://github.com/jetemail/jetemail-rust"
+keywords = ["email", "jetemail", "api"]
+categories = ["api-bindings", "email"]
+
+[dependencies]
+reqwest = { version = "0.13", default-features = false, features = ["json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+maybe-async = "0.2"
+base64 = "0.22"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+
+[features]
+default = ["native-tls"]
+blocking = ["reqwest/blocking", "maybe-async/is_sync"]
+native-tls = ["reqwest/native-tls"]
+rustls = ["reqwest/rustls"]
